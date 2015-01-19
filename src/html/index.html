@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>tearoom6 website</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+    <script src="../script/all.min.js"></script>
+  </head>
+
+  <body ng-app="Tearoom6Module">
+    <div class="container" ng-controller="AppCtrl">
+      <div class="page-header">
+        <h1><small>tearoom6 website</small></h1>
+      </div>
+
+      <!-- メニュー -->
+      <ul class="nav nav-tabs">
+        <li role="presentation" ng-class="{ active: isButtonActive('android') }"><a ng-click="listApps('android')">Android Apps</a></li>
+        <li role="presentation" ng-class="{ active: isButtonActive('ios') }"><a ng-click="listApps('ios')">iOS Apps</a></li>
+      </ul>
+      
+      <!-- アプリ説明 -->
+      <div class="row thumbnail" ng-repeat="app in apps">
+        <div class="col-md-3">
+          <a href="{{app.url}}" target="_blank"><img src="{{app.image}}" alt="{{app.name}}" width="200" height="200"></a>
+        </div>
+        <div class="col-md-9">
+          <h3>{{app.name}}</h3>
+          <p>{{app.description}}</p>
+          <p><a href="{{app.url}}" target="_blank" class="btn btn-primary">このゲームで遊ぶ</a></p>
+        </div>
+      </div>
+      
+    </div>
+  </body>
+</html>
