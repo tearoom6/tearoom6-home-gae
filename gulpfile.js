@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var imagemin = require('gulp-imagemin');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var ngAnnotate = require('gulp-ng-annotate');
 var plumber = require('gulp-plumber');
 var header = require('gulp-header');
 var sass = require('gulp-ruby-sass');
@@ -39,6 +40,17 @@ gulp.task('js', function() {
    console.log('js minified.');
 });
 
+gulp.task('js-ng', function() {
+   gulp.src('./src/**/*.js')
+      .pipe(plumber())
+      .pipe(concat('all.min.js'))
+      .pipe(ngAnnotate())
+      .pipe(uglify())
+      .pipe(header('/* copyright (c)tearoom6 2015 */'))
+      .pipe(gulp.dest('./dist/script'));
+   console.log('js minified.');
+});
+
 gulp.task('js-dev', function() {
    gulp.src('./src/**/*.js')
       .pipe(plumber())
@@ -63,7 +75,7 @@ gulp.task('clean', function(cb) {
 gulp.task('build', function(callback) {
    return runSequence(
       'clean',
-      ['config', 'html', 'img', 'js-dev', 'sass'], // Angular.jsはminifyに弱いためjs-devを使う
+      ['config', 'html', 'img', 'js-ng', 'sass'], // Angular.js用
       callback
    );
    console.log('build successful.');
