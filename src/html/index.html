@@ -27,6 +27,7 @@
       <ul class="nav nav-tabs">
         <li role="presentation" ng-class="{ active: isButtonActive('android') }"><a ng-click="listApps('android')">Android Apps</a></li>
         <li role="presentation" ng-class="{ active: isButtonActive('ios') }"><a ng-click="listApps('ios')">iOS Apps</a></li>
+        <li role="presentation" ng-class="{ active: isButtonActive('chrome') }"><a ng-click="listApps('chrome')">Chrome Apps</a></li>
       </ul>
       
       <!-- アプリ説明 -->
@@ -37,7 +38,7 @@
         <div class="col-md-9">
           <h3>{{app.name}}</h3>
           <p>{{app.description}}</p>
-          <p><a href="{{app.url}}" target="_blank" class="btn btn-primary">このゲームで遊ぶ</a></p>
+          <p><a href="{{app.url}}" target="_blank" class="btn btn-primary">{{app.buttonText}}</a></p>
         </div>
       </div>
       

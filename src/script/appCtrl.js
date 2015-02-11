@@ -7,11 +7,22 @@ angular.module('Tearoom6Module', [])
       name: 'Breakthrough',
       description: 'パネルが光った順を記憶して、その順番にパネルをなぞる簡単なゲームです。',
       url: 'https://play.google.com/store/apps/details?id=jp.tearoom6.MemoryTouch',
-      image: 'https://lh5.ggpht.com/at6OFqrL1a-T2AVpLkizrxfEnoTrumjrlfKIjwTLfYkrCSXyH-7ueZqX99k2BBJtheU=w300-rw'
+      image: 'https://lh5.ggpht.com/at6OFqrL1a-T2AVpLkizrxfEnoTrumjrlfKIjwTLfYkrCSXyH-7ueZqX99k2BBJtheU=w300-rw',
+      buttonText: 'このゲームで遊ぶ'
     }
   ];
   // iOS
   $scope.iOSApps = [];
+  // Chrome
+  $scope.chromeApps = [
+    { // Quick Drive
+      name: 'Quick Drive',
+      description: 'Google Driveへの簡易アクセスを提供するChrome拡張機能です。',
+      url: 'https://chrome.google.com/webstore/detail/quick-drive/aijfbconiilhjgfljolkoiaockgenpgn?utm_source=chrome-ntp-icon',
+      image: '../img/icon_quick_drive.png',
+      buttonText: 'このアプリを使う'
+    }
+  ];
   // デフォルト
   $scope.active = 'android';
   $scope.apps = $scope.androidApps;
@@ -29,6 +40,9 @@ angular.module('Tearoom6Module', [])
     } else if (type == 'ios') {
       $scope.active = 'ios';
       $scope.apps = $scope.iOSApps;
+    } else if (type == 'chrome') {
+      $scope.active = 'chrome';
+      $scope.apps = $scope.chromeApps;
     }
   };
 });
