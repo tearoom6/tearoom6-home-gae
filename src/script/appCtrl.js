@@ -12,7 +12,15 @@ angular.module('Tearoom6Module', [])
     }
   ];
   // iOS
-  $scope.iOSApps = [];
+  $scope.iOSApps = [
+    { // Breakthrough
+      name: 'Breakthrough',
+      description: 'パネルが光った順を記憶して、その順番にパネルをなぞる簡単なゲームです。',
+      url: 'https://itunes.apple.com/jp/app/memory-game-breakthrough/id978414951',
+      image: 'http://a5.mzstatic.com/jp/r30/Purple3/v4/7f/e4/f3/7fe4f330-f79a-d626-5385-9488715c72e1/icon175x175.jpeg',
+      buttonText: 'このゲームで遊ぶ'
+    }
+  ];
   // Chrome
   $scope.chromeApps = [
     { // Quick Drive
