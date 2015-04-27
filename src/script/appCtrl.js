@@ -29,6 +29,13 @@ angular.module('Tearoom6Module', [])
       url: 'https://chrome.google.com/webstore/detail/quick-drive/aijfbconiilhjgfljolkoiaockgenpgn?utm_source=chrome-ntp-icon',
       image: '../img/icon_quick_drive.png',
       buttonText: 'このアプリを使う'
+    },
+    { // Breakthrough
+      name: 'Breakthrough',
+      description: 'パネルが光った順を記憶して、その順番にパネルをなぞる簡単なゲームです。',
+      url: 'https://chrome.google.com/webstore/detail/breakthrough/enomebafdipneelnonocbglkoabmgmob',
+      image: 'https://lh5.ggpht.com/at6OFqrL1a-T2AVpLkizrxfEnoTrumjrlfKIjwTLfYkrCSXyH-7ueZqX99k2BBJtheU=w300-rw',
+      buttonText: 'このゲームで遊ぶ'
     }
   ];
   // デフォルト
